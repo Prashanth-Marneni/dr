@@ -9,5 +9,12 @@
             "src": "/(.*)",
             "dest": "DR/wsgi.py"
         }
-    ]
+    ],
+  "functions": [{
+    "pages/**/*": {
+      "excludeFiles": "public/**"
+    }
+  }
+  ]
 }
+
