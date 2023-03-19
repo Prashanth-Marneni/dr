@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'details.css' %}">
+
+
+</head>
+<body>
+    <div class="container">
+        <header>Details</header>
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Patient Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" name="name"placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input type="date" placeholder="Enter birth date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" name='email'placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" name="phone" placeholder="Enter mobile number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div style="padding-bottom: 10px;">
+                <label class="form-label" for="customFile">Left Eye Retina</label>
+                <br>
+                <input type="file" name="file1" class="form-control" id="customFile" />
+                </div>
+                
+                <label class="form-label" for="customFile">Right Eye Retina</label>
+                <br>
+                <input type="file" name="file2" class="form-control" id="customFile" />
+               
+                    <button class="nextBtn">
+                        <span class="btnText">Get Results</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+            </div>
+         
+        </form>
+    </div>
+
+   
+</body>
+</html>

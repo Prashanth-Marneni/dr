@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}">
+    <style>
+    .banner_wrapper{
+    background-image:url('/static/images/Top-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    }
+    .services_wrapper .card:hover{
+    background:rgb(245, 242, 233);
+
+    border-color:transparent;
+}
+.services_wrapper .card{
+    background-color:transparent;
+    border:.0625rem solid white;
+    box-shadow: none;
+    padding:2.5rem;
+}
+    </style>
+</head>
+<body>
+    
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+</ul>
+{% endif %}
+    <nav class="navbar navbar-expand-lg navbar navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/eye-3-512.png" class="img-fluid" style="height:40px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- <span class="navbar-toggler-icon"></span> -->
+              <i class="fas fa-stream navbar-toggler-icon"></i>
+            </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#symptoms">Symptoms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#precautions">Precautions</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+   <!-- Banner section --> 
+   <section id="home" class="home">
+    <div class="banner_wrapper wrapper">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-1 order-2">
+                    <h3>Better Eyes</h3>
+                    <h1>Better Vision</h1>
+                    <p>Diagonise your eyes and prevent them from the risk of Diabetic Retinopathy
+                    </p>
+                    <a href="/signin" class="main-btn mt-4 fill-btn">Doctor Login</a>
+                </div>
+                <div class="col-md-6 order-md-2 order-1 mb-md-0 mb-5">
+                    <div class="top-right-sec">
+                        <div class="animate-img">
+                            <img class="aimg1" src="">
+                            <img class="aimg2" src="">
+                        </div>
+                        <img class="img-fluid ms-xl-5" src="/static/images/eye4.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- Services section --> 
+  <section id="symptoms" class="services_wrapper wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center mb-5">
+                <h3 style="color: black;">Symptoms</h3>
+            </div>
+        </div>
+        <div class="row">
+           
+           
+           
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="icon-box card h-100 embed-responsive embed-responsive-16by9" style="border-color: white">
+                        <img src="/static/images/blurry.jpg">
+                    </div>
+                    <div>
+                        <h4>Blurred vision</h4>
+                        <p>If you feel your vision is getting blurred and you are diabetic patient then there is a possibility of having DR</p>
+                  
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="icon-box card h-100 embed-responsive embed-responsive-16by9" style="border-color: white">
+                        <img src="/static/images/floaters.png">
+                    </div>
+                    <div>
+                        <h4>Spots or dark strings floating in your vision (floaters)</h4>
+                        <p>If there are spots in your vision there is a possibility of having DR</p>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="icon-box card h-100 embed-responsive embed-responsive-16by9" style="border-color: white">
+                        <img src="/static/images/darkarea.jpg">
+                    </div>
+                    <div>
+                        <h4>Dark or empty areas in your vision</h4>
+                        <p>If you are unable to see clearly then there is a possibility of having DR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="precautions" class="services_wrapper wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center mb-5">
+                <h3 style="color:black">Precautions</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="icon-box  card h-100 embed-responsive embed-responsive-16by9" style="border-color: white">
+                        <img src="/static/images/diabetes.png">
+                    </div>
+                    <div>
+                        <h4>Manage your diabetes</h4>
+                        <p>Make healthy eating and physical activity part of your daily routine. Try to get at least 150 minutes of moderate aerobic activity, such as walking, each week.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="icon-box  card h-100 embed-responsive embed-responsive-16by9" style="border-color: white">
+                        <img src="/static/images/sugarlevel.jpg">
+                    </div>
+                    <div>
+                        <h4>Monitor your blood sugar level</h4>
+                        <p> You might need to check and record your blood sugar level several times a day — or more frequently if you're ill or under stress.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="icon-box  card h-100 embed-responsive embed-responsive-16by9" style="border-color: white">
+                        <img src="/static/images/visionchange.jpg">
+                    </div>
+                    <div>
+                        <h4>Pay attention to vision changes</h4>
+                        <p>Contact your eye doctor right away if your vision suddenly changes or becomes blurry, spotty or hazy.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
